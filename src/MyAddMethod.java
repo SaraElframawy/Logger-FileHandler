@@ -6,4 +6,7 @@ public class MyAddMethod {
     }  public int add3 (int value){
         return value+3;
     }
+    public static int add4(int value){
+        return value+4;
+    }
 }

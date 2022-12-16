@@ -11,18 +11,18 @@ public class MyAddMethodTest {
     Random random = new Random();
     public static final Logger LOGGER = Logger.getLogger(MyAddMethod.class.getName());
 
-    int temperanceValue;
+    int TemperValue;
     int tempResult = 0;
     @Test
     public void testAdd1() throws Exception {
 
 
         for (int i = 0; i < 5; i++) {
-            temperanceValue = random.nextInt(10);
-            tempResult = temperanceValue + 1;
-            assertEquals(myAddMethod.add1(temperanceValue), tempResult);
+            TemperValue = random.nextInt(10);
+            tempResult = TemperValue + 1;
+            assertEquals(myAddMethod.add1(TemperValue), tempResult);
         }
-        LOGGER.info("Testing the method add with :" + temperanceValue);
+        LOGGER.info("Testing the method add with :" + TemperValue);
         FileHandler handler = new FileHandler("File Handler");
         LOGGER.addHandler(handler);
         LOGGER.fine("finer message");
@@ -35,10 +35,10 @@ public class MyAddMethodTest {
 
 
         for (int i = 0; i < 5; i++) {
-            temperanceValue = random.nextInt(10);
-            tempResult = temperanceValue + 3;
-            LOGGER.info("this the method add 3: " + temperanceValue);
-            assertEquals(myAddMethod.add3(temperanceValue), tempResult);
+            TemperValue = random.nextInt(10);
+            tempResult = TemperValue + 3;
+            LOGGER.info("this the method add 3: " + TemperValue);
+            assertEquals(myAddMethod.add3(TemperValue), tempResult);
         }
 
         FileHandler handler = new FileHandler("File for logging");
@@ -51,15 +51,27 @@ public class MyAddMethodTest {
 
 
         for (int i = 0; i < 5; i++) {
-            temperanceValue = random.nextInt(10);
-            tempResult = temperanceValue + 2;
+            TemperValue = random.nextInt(10);
+            tempResult = TemperValue + 2;
 
 
-            assertEquals(myAddMethod.add2(temperanceValue), tempResult);
-            LOGGER.info("this method add 2:" + temperanceValue);
+            assertEquals(myAddMethod.add2(TemperValue), tempResult);
+            LOGGER.info("this method add 2:" + TemperValue);
         }
 
         FileHandler handler = new FileHandler("using file hANDLER TO CREATE log");
+        LOGGER.addHandler(handler);
+    }
+    @Test
+    public void Testadd4 ()throws  Exception{
+        for (int i =0;i<5;i++){
+            TemperValue = random.nextInt(10);
+            tempResult= TemperValue+4;
+            assertEquals(MyAddMethod.add4(TemperValue),tempResult);
+            LOGGER.info("this method to add 4 to"+TemperValue);
+
+        }
+        FileHandler handler = new FileHandler("reassuring handler file");
         LOGGER.addHandler(handler);
     }
 }
